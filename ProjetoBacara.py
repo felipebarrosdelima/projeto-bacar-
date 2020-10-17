@@ -45,7 +45,7 @@ while fj > 0: #Looping utilizado para fazer com que o jogador continue jogando a
     if soma_banca >= 10: # Condição para falar que se por exemplo a soma der 12 então o valor real é 2 etc...
         soma_banca -=10  
     
-    if soma_banca == soma_jogador: # Verifica se deu impate
+    if soma_banca == soma_jogador: # Verifica se deu empate
         print('Empate!')
         A = True
     else:
