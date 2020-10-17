@@ -45,7 +45,7 @@ while fj > 0: #Looping utilizado para fazer com que o jogador continue jogando a
     if soma_banca >= 10: # Condição para falar que se por exemplo a soma der 12 então o valor real é 2 etc...
         soma_banca -=10  
     
-    if soma_banca == 8 or soma_banca == 9 and soma_jogador == 8 or soma_jogador == 9 or soma_banca == soma_jogador: # Verifica se deu impate
+    if soma_banca == soma_jogador: # Verifica se deu impate
         print('Empate!')
         A = True
     else:
@@ -62,11 +62,11 @@ while fj > 0: #Looping utilizado para fazer com que o jogador continue jogando a
         C = False
 
 
-    if destino_aposta == 'Empate' and A == True: # Distribui os ganhos para caso o vencedor tenha ganho
+    if destino_aposta == 'Empate' and A == True: # Distribui os ganhos para caso o jogador tenha apostado no empate e acertado
         fj  += aposta*8
-    if destino_aposta == 'Jogador' and C == True:
+    if destino_aposta == 'Jogador' and C == True: # Distribui o lucro para caso o jogador  tenha apostado no jogador e acertado
         fj += aposta*2
-    if destino_aposta =='Banca' and B == True:
+    if destino_aposta =='Banca' and B == True: # Dustribui o lucro para caso o jogador tenha apostado na banca e acertado
         fj += aposta*0.95 + aposta
     
     print('Você está com ', fj , 'fichas')
