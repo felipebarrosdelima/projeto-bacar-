@@ -28,16 +28,15 @@ while fj > 0: #Looping utilizado para fazer com que o jogador continue jogando a
     count = 0 
     soma_jogador = sum(Mão_jogador) #Variável para guardar a soma da lista Mão_jogador
     soma_banca = sum(Mão_Banca) #Variável para guardar a soma da lista Mão_Banca
-    
+
     if soma_jogador >= 10: # Condição para falar que se por exemplo a soma der 12 então o valor real é 2 etc...
         soma_jogador -= 10 
     if soma_banca >= 10: # Condição para falar que se por exemplo a soma der 12 então o valor real é 2 etc...
-        soma_banca -=10       
-    
-    if soma_jogador <=5: # Condição para distribuir a terceira carta
+        soma_banca -=10  
+    if soma_jogador <=5 and soma_banca < 8 or soma_banca > 9: # Condição para distribuir a terceira carta
         Mão_jogador.append(random.choice(Valores_cartas))
         soma_jogador = sum(Mão_jogador)
-    if soma_banca <=5: # Condição para distribuir a terceira carta
+    if soma_banca <=5 and soma_jogador < 8 or soma_jogador > 9 : # Condição para distribuir a terceira carta
         Mão_Banca.append(random.choice(Valores_cartas))
         soma_banca = sum(Mão_Banca)
 
@@ -46,7 +45,7 @@ while fj > 0: #Looping utilizado para fazer com que o jogador continue jogando a
     if soma_banca >= 10: # Condição para falar que se por exemplo a soma der 12 então o valor real é 2 etc...
         soma_banca -=10  
     
-    if soma_banca == 8 and soma_banca == 9 and soma_jogador == 8 and soma_jogador == 9 or soma_banca == soma_jogador: # Verifica se deu impate
+    if soma_banca == 8 or soma_banca == 9 and soma_jogador == 8 or soma_jogador == 9 or soma_banca == soma_jogador: # Verifica se deu impate
         print('Empate!')
         A = True
     else:
