@@ -7,7 +7,8 @@ fj = (int(input('Digite quantas fichas você deseja colocar no jogo '))) #fj ref
 
 Cartas = ['A','A','A','A',2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,'J','J','J','J','Q','Q','Q','Q','K','K','K','K'] #Lista do baralho
 
-Valores_cartas =[1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0] # Lista dos valores das Cartas 
+Valores_cartas =[1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]*6 # Lista dos valores das Cartas 
+
 count = 0 
 Mão_jogador = []
 Mão_Banca = []
@@ -69,9 +70,10 @@ while fj > 0: #Looping utilizado para fazer com que o jogador continue jogando a
     if destino_aposta =='Banca' and B == True: # Dustribui o lucro para caso o jogador tenha apostado na banca e acertado
         fj += aposta*0.95 + aposta
     
+    
     print('Você está com ', fj , 'fichas')
-    print(Mão_jogador,Mão_Banca)
-    print(soma_jogador,soma_banca)    
+    print(f'os valores das cartas do jogador são{Mão_jogador},os valores das cartas do banca são{Mão_Banca}')
+    print(f'a soma do valor das cartas do jogador é {soma_jogador}, a soma do das cartas da banca é{soma_banca}')    
     list.clear(Mão_Banca)
     list.clear(Mão_jogador)   
 
