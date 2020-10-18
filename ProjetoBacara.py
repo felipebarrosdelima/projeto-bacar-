@@ -3,8 +3,29 @@
 # Equipe: Felipe Barros de Lima  e João Pedro de Souza Costa Ferreira
 # Data: 14/10/2020
 import random
-q_jogadores=int(input('quantos jogadores tem no jogo '))
+import random
 
+q_jogadores=int(input('quantos jogadores tem no jogo ')) #Variável que guarda quantos jogadores vão estar no jogo
+lista_jogadores = [] # Lista que guarda respectivamente as fichas que cada jogador vai colocar no jogo, seu destino de aposta e por final o quanto é sua aposta
+contador_jogadores = 0 # Contador utilizado para o preenchimento da lista_jogadores
+contador_nome_jogador = 1 # Contador utilziado para o nome de cada jogador
+while contador_jogadores < q_jogadores: # Looping utilizado para criação da lista_jogadores
+    fichas = int(input(f'Digite quantas fichas o jogador {contador_nome_jogador} deseja apostar')) #variável utilizada para guardar as fichas que cada jogador entra no jogo
+    destino_aposta2 = input('Digite em quem você quer apostar? Opções: Banca, Empate, Jogador. ') #Varável utilizada para guardar o destino da aposta de cada jogador 
+    aposta = int(input('Digite o quanto você deseja apostar nessa rodada')) #Variável utilizada para guardar a aposta de cada jogador
+    lista_lista = [] # Lista  que guarda as informações anteriores
+    lista_lista.append(fichas)
+    while aposta > fichas: #looping utilizado para validar a aposta
+        aposta = int(input('Sua aposta não foi valida, por favor aposte de novo'))
+        
+    lista_lista.append(aposta) # Colocando na lista_lista valor da aposta
+    lista_lista.append(destino_aposta2) #Colocando na lista_lista o destino na aposta
+    lista_jogadores.append(lista_lista) #Colocando na list_jogadores os valores da lista_lista
+    contador_jogadores +=1
+    contador_nome_jogador +=1
+
+print(lista_jogadores)
+print(lista_jogadores[0][0])
 
 fj = (int(input('Digite quantas fichas você deseja colocar no jogo '))) #fj refere-se a variável que vai guardar quantas fichas o jogador vai colocar no jogo.
 
@@ -84,7 +105,6 @@ while fj > 0: #Looping utilizado para fazer com que o jogador continue jogando a
 
   
     
-
 
 
 
