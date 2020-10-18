@@ -3,6 +3,9 @@
 # Equipe: Felipe Barros de Lima  e João Pedro de Souza Costa Ferreira
 # Data: 14/10/2020
 import random
+q_jogadores=int(input('quantos jogadores tem no jogo '))
+
+
 fj = (int(input('Digite quantas fichas você deseja colocar no jogo '))) #fj refere-se a variável que vai guardar quantas fichas o jogador vai colocar no jogo.
 
 Cartas = ['A','A','A','A',2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5,6,6,6,6,7,7,7,7,8,8,8,8,9,9,9,9,10,10,10,10,'J','J','J','J','Q','Q','Q','Q','K','K','K','K'] #Lista do baralho
@@ -63,12 +66,12 @@ while fj > 0: #Looping utilizado para fazer com que o jogador continue jogando a
         C = False
 
 
-    if destino_aposta == 'Empate' and A == True: # Distribui os ganhos para caso o jogador tenha apostado no empate e acertado
-        fj  += aposta*8
-    if destino_aposta == 'Jogador' and C == True: # Distribui o lucro para caso o jogador  tenha apostado no jogador e acertado
-        fj += aposta*2
-    if destino_aposta =='Banca' and B == True: # Dustribui o lucro para caso o jogador tenha apostado na banca e acertado
-        fj += aposta*0.95 + aposta
+    if destino_aposta == 'Empate' and A == True: # Distribui os ganhos para caso o jogador menos a taxa do casino tenha apostado no empate e acertado
+        fj  += aposta*8-((14.44/100)*aposta*8)
+    if destino_aposta == 'Jogador' and C == True: # Distribui o lucro menos a taxa do casino para caso o jogador  tenha apostado no jogador e acertado
+        fj += aposta*2-((1.24/100)*aposta*2)
+    if destino_aposta =='Banca' and B == True: # Distribui o lucro para caso o jogador menos a taxa do casino tenha apostado na banca e acertado
+        fj += aposta*1.95-((1.06/100)*aposta*1.95)
     
     
     print('Você está com ', fj , 'fichas')
