@@ -59,7 +59,7 @@ while fj > 0: #Looping utilizado para fazer com que o jogador continue jogando a
     if soma_banca >= 10: # Condição para falar que se por exemplo a soma der 12 então o valor real é 2 etc...
         soma_banca -=10 
 
-  #edito      
+       
 
     if soma_banca != 6 and soma_banca < 6:#Se a soma das duas cartas do banco for igual a 6 ou mais, ele não recebe a terceira carta
         if soma_banca <=5 and soma_jogador < 8 or soma_jogador > 9 : # Condição para distribuir a terceira carta
@@ -82,14 +82,14 @@ while fj > 0: #Looping utilizado para fazer com que o jogador continue jogando a
                 Mão_Banca.append(random.choice(Valores_cartas))
             if soma_banca==4 and terceira_carta>1 and terceira_carta<8:#condilção para se a soma da banca for igual a 4 mais uma cata é distribuida se a terceira carta do jogador não for 0, 1, 8, 9
                 Mão_Banca.append(random.choice(Valores_cartas))
-            if soma_banca==5 and terceira_carta>3 and terceira_carta<8:#condilção para se a soma da banca for igual a 5 mais uma cata é distribuida se a terceira carta do jogador não for 0, 1, 3, 8 e 9
-
-    else:# se o jogador não recebeu uma terceira carta e a soma das duas cartas do banco for menor ou igual a 5, ele recebe a terceira carta;
+            if soma_banca==5 and terceira_carta>3 and terceira_carta<8: #condilção para se a soma da banca for igual a 5 mais uma cata é distribuida se a terceira carta do jogador não for 0, 1, 3, 8 e 9
+                Mão_Banca.append(random.choice(Valores_cartas))
+    else:
         if soma_banca<=5:#soma das duas cartas do banco for menor ou igual a 5, ele recebe a terceira carta;
             Mão_jogador.append(random.choice(Valores_cartas))
             soma_jogador = sum(Mão_jogador)
 
-#edito
+
 
     if soma_jogador >= 10: # Condição para falar que se por exemplo a soma der 12 então o valor real é 2 etc...
         soma_jogador -=10
